@@ -1,0 +1,17 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "ncodefresh/eb-nodejs-example",
+    "Update": "true"
+  },
+  "Authentication": {
+    "Bucket": "cf-elastic-beanstalk",
+    "Key": ".dockercfg"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "3000"
+    }
+  ],
+  "Logging": "/var/log"
+}
