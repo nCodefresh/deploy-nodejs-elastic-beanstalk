@@ -16,3 +16,9 @@ steps:
     credentials:
       username: ${{username}}
       password: ${{password}}
+
+  amazon-beanstalk:
+    fail-fast: false
+    image: garland/aws-cli-docker:latest
+    commands:
+     - sh -c  "aws configure set region '${{AWS_REGION}}' && aws elasticbeanstalk update-environment --environment-name '${{AWS_ENV_NAME}}' --version-label '${{AWS_VERSION}}' "
