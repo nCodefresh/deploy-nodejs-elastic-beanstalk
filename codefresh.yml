@@ -9,15 +9,15 @@ steps:
     dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
 
-  push_to_docker_registry:
-    type: push
-    candidate: ${{build_prj}}
-    tag: ${{CF_BRANCH}}
-    credentials:
-      username: ${{username}}
-      password: ${{password}}
+#  push_to_docker_registry:
+#    type: push
+#    candidate: ${{build_prj}}
+#    tag: ${{CF_BRANCH}}
+#    credentials:
+#      username: ${{username}}
+#      password: ${{password}}
 
-  amazon-beanstalk:
+  deploy-elastic-beanstalk:
     fail-fast: false
     image: garland/aws-cli-docker:latest
     commands:
